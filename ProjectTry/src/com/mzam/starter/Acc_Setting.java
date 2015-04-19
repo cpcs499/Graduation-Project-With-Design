@@ -97,7 +97,8 @@ public class Acc_Setting extends Activity {
               // String itemVa = (String) listView.getItemAtPosition(position);
                
                if(itemPosition == 0){
-            	   Intent in = new Intent (Acc_Setting.this , User_Order.class);
+            	   
+            	   Intent in = new Intent (Acc_Setting.this , User_All_Orders.class);
 				startActivity(in);
                }
                
@@ -135,7 +136,7 @@ public class Acc_Setting extends Activity {
    						   				{
    						   					if (newestPassString.equals("")) { newestPass.setError("Empty");}
    						   					else if (newestPassString.length()<6 || newestPassString.length()>20) { newestPass.setError("The Password length is between 6 and 20");}
-   						   					else if (newestPassString.contains("*")){newestPass.setError("Password must doesn't Contain ì*î ");}
+   						   					else if (newestPassString.contains("*")){newestPass.setError("Password must doesn't Contain ‚Äú*‚Äù ");}
    						   					else if (Pattern.compile(PASSWORD_PATTERN).matcher(newestPassString).matches() == false)
    						   					{newestPass.setError("The password Must Contain numbers ,Uppercase and Lowercase letters");}
    						   					
