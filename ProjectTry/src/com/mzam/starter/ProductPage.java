@@ -43,6 +43,8 @@ public class ProductPage extends Activity {
 	
 	String phone;
 	String prodId;
+	
+	String shopId;
     ParseObject product;
     
 	//////////////////////////////
@@ -93,7 +95,7 @@ public class ProductPage extends Activity {
 	
 	final Context context = this;
 	////////////////////
-	TextView editBtn,ProductOrder;
+	TextView editBtn,ProductOrder ,order_this_prodcut;
 	TextView deleteBtn;
 	Button rate ;
 	@Override
@@ -106,6 +108,8 @@ public class ProductPage extends Activity {
 
 			Intent i = getIntent();
 			// Get the intent from ListViewAdapter
+			shopId= i.getStringExtra("shopId");
+			
 			
 			prodId =i.getStringExtra("productid");
             name = (TextView)findViewById(R.id.NameSet);
@@ -113,6 +117,7 @@ public class ProductPage extends Activity {
 			TotalQnt = (TextView)findViewById(R.id.QuantSet);
 			Price = (TextView)findViewById(R.id.PriceSet);
 			ProductOrder = (TextView)findViewById(R.id.textView4);
+			order_this_prodcut = (TextView)findViewById(R.id.order_the_product);
 			// Locate the ImageView in singleitemview.xml
 			final ParseImageView imgphone = (ParseImageView) findViewById(R.id.phone);
 			// Load image into the ImageView
@@ -504,6 +509,19 @@ public class ProductPage extends Activity {
 						// TODO Auto-generated method stub
 						Intent in = new Intent (ProductPage.this,ViewProductOrders.class);
 						in.putExtra("productID", prodId);
+						startActivity(in);
+					}
+				});
+				order_this_prodcut.setOnClickListener(new View.OnClickListener() {
+					
+					@Override
+					public void onClick(View arg0) {
+						// TODO Auto-generated method stub
+						Intent in = new Intent (ProductPage.this,OrderProduct.class);
+						in.putExtra("productID", prodId);
+						  //-------------------------->>heeeeeeeeeeeeere>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+						in.putExtra("shopId", shopId);
+						
 						startActivity(in);
 					}
 				});
