@@ -268,5 +268,11 @@
         android:layout_x="25dp"
         android:layout_y="370dp"
         android:text="Colors Availables:" />
-
+<TextView
+         android:id="@+id/order_the_product"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_x="228dp"
+         android:layout_y="120dp"
+         android:text="Order This" />
 </AbsoluteLayout>
