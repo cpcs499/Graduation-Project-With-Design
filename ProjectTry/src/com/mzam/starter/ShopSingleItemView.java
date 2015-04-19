@@ -330,6 +330,7 @@ public class ShopSingleItemView extends Activity {
     			   Toast.makeText(getApplicationContext(),position+"", Toast.LENGTH_SHORT).show();
     			   Intent in = new Intent(ShopSingleItemView.this,ProductPage.class);
     			   in.putExtra("productid", obList.get(position).toString());
+    			   in.putExtra("shopId", shopId);
     			//Toast.makeText(getApplicationContext(),obList.get(position), Toast.LENGTH_SHORT).show();
     				//object.getObjectId().toString();
     			   startActivity(in);
