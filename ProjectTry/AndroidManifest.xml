@@ -127,6 +127,23 @@
         <activity 
             android:name=".ProductComments"
              />
+                  <activity
+            android:name=".OrderProduct"
+            android:label="@string/app_name" >
+        </activity>
+           <activity
+            android:name=".User_Order_Page"
+            android:label="@string/app_name" >
+        </activity>
+         
+         <activity
+            android:name=".User_All_Orders"
+            android:label="@string/app_name" >
+        </activity>
+         <activity
+            android:name=".Edit_Ordered_Product"
+            android:label="@string/app_name" >
+        </activity>
         
         
         
